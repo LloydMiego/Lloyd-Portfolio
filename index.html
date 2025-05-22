@@ -16,8 +16,12 @@
       position: absolute;
       top: 0;
       right: 0;
-      padding: 1rem;
-      background-color: transparent;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      box-sizing: border-box;
     }
 
     nav a {
@@ -51,7 +55,7 @@
     }
 
     header h1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       color: #f0f0f0;
       margin: 1rem 0 0.5rem;
     }
@@ -124,7 +128,6 @@
       }
     }
 
-    /* Green highlight for contact links */
     #contact a {
       color: #aaa;
       text-decoration: none;
@@ -134,6 +137,17 @@
     #contact a:hover {
       color: #00ff88;
     }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
@@ -141,6 +155,7 @@
   <nav>
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
+    <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
   </nav>
@@ -184,10 +199,46 @@
     </div>
   </section>
 
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="services-grid">
+      <div class="service">
+        <h3>1000+ YouTube Videos Produced</h3>
+        <p>End-to-end video editing for motivational, tech, crypto, and lifestyle content using Adobe Premiere and CapCut.</p>
+      </div>
+      <div class="service">
+        <h3>CRM & Inbox Automation (VA Work)</h3>
+        <p>Set up email automation flows, sorted queries, built SOPs and optimized inbox management for executive clients.</p>
+      </div>
+      <div class="service">
+        <h3>Custom Microcontroller Circuits</h3>
+        <p>Designed and simulated embedded systems using Arduino/ESP32, integrating sensors and mobile interface apps.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="services-grid">
+      <div class="service">
+        <p><strong>“Lloyd is reliable, fast, and proactive. He helped us grow our YouTube channel without missing a beat.”</strong></p>
+        <p>- Client from California, USA</p>
+      </div>
+      <div class="service">
+        <p><strong>“He made my operations flow like butter — everything from email, scheduling to outreach was optimized.”</strong></p>
+        <p>- Startup Founder, Singapore</p>
+      </div>
+      <div class="service">
+        <p><strong>“A sharp engineer who understands both tech and communication. Truly rare to find.”</strong></p>
+        <p>- Freelance client via Upwork</p>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" style="scroll-margin-top: 80px;">
     <h2>Contact Me</h2>
     <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
-      <img src="1.png" alt="Lloyd Miego" style="width: 100px; border-radius: 50%; border: 2px solid #00ff88; box-shadow: 0 0 12px #00ff88;" />
+      <img src="1.png" alt="Lloyd Miego" style="width: 100px; border-radius: 50%; border: 2px solid #00ff88;" />
       <div>
         <p>Ready to work together? Let’s connect.</p>
         <p>Email: <a href="mailto:lloydmiego@gmail.com">lloydmiego@gmail.com</a></p>
@@ -199,5 +250,23 @@
   <footer>
     &copy; 2025 Lloyd Miego. All rights reserved.
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealElements = document.querySelectorAll('section');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      revealElements.forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>
