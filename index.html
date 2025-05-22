@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lloyd Miego | Electronics Engineer & VA</title>
   <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: #f0f0f0;
+    }
+
     nav {
       position: absolute;
       top: 0;
@@ -12,6 +19,7 @@
       padding: 1rem;
       background-color: transparent;
     }
+
     nav a {
       margin: 0 0.5rem;
       font-size: 0.9rem;
@@ -19,24 +27,21 @@
       text-decoration: none;
       transition: color 0.3s, border-bottom 0.3s;
     }
+
     nav a:hover {
       color: #00ff88;
       border-bottom: 2px solid #00ff88;
     }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #1c1c1c;
-      color: #f0f0f0;
-    }
+
     header {
       padding: 4rem 2rem;
       background: linear-gradient(to right, #ffffff10, #2a2a2a);
-      color: #222;
+      color: #f0f0f0;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     @media (min-width: 768px) {
       header {
         flex-direction: row;
@@ -44,9 +49,7 @@
         text-align: left;
       }
     }
-    .header-content {
-      margin-left: 2rem;
-    }
+
     header img {
       width: 160px;
       height: 160px;
@@ -54,16 +57,23 @@
       object-fit: cover;
       border: 3px solid #555;
     }
+
+    .header-content {
+      margin-left: 2rem;
+    }
+
     header h1 {
       font-size: 2.5rem;
       color: #f0f0f0;
       margin: 1rem 0 0.5rem;
     }
+
     header p {
       font-size: 1.25rem;
       color: #ccc;
       margin: 0;
     }
+
     .cta-buttons a {
       display: inline-block;
       margin: 1rem 0.5rem;
@@ -73,13 +83,15 @@
       color: white;
       text-decoration: none;
       border: 2px solid transparent;
-      transition: background 0.3s, border-color 0.3s;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
     }
+
     .cta-buttons a:hover {
       background: #00ff88;
       color: #1c1c1c;
       border-color: #00ff88;
     }
+
     section {
       padding: 4rem 2rem;
       max-width: 800px;
@@ -89,22 +101,26 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     }
+
     h2 {
       border-bottom: 2px solid #444;
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
     }
+
     .services-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
+
     .service {
       background: #2a2a2a;
       padding: 1rem;
       border-radius: 8px;
       border-left: 4px solid #ccc;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -112,49 +128,34 @@
       background: #121212;
       color: #999;
     }
+
     @media (min-width: 600px) {
       .services-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
-      .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
+
+    /* Green highlight for contact links */
+    #contact a {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    #contact a:hover {
+      color: #00ff88;
     }
-  
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    revealElements.forEach(el => {
-      el.classList.add('reveal');
-      observer.observe(el);
-    });
-  });
-</script>
+  </style>
 </head>
-
+
+<body>
   <nav>
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
   </nav>
+
   <header>
     <img src="1.png" alt="Lloyd Miego Profile Picture" />
     <div class="header-content">
@@ -198,8 +199,8 @@
   <section id="contact" style="scroll-margin-top: 80px;">
     <h2>Contact Me</h2>
     <p>Ready to work together? Let’s connect.</p>
-    <p>Email: <a href="mailto:lloydmiego@gmail.com" style="color: #aaa;">lloydmiego@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/lloydangelo/" target="_blank" style="color: #aaa;">linkedin.com/in/lloydangelo</a></p>
+    <p>Email: <a href="mailto:lloydmiego@gmail.com">lloydmiego@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/lloydangelo/" target="_blank">linkedin.com/in/lloydangelo</a></p>
   </section>
 
   <footer>
