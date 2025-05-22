@@ -13,24 +13,36 @@
     }
     header {
       padding: 4rem 2rem;
-      text-align: center;
       background: #2a2a2a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+      }
+    }
+    .header-content {
+      margin-left: 2rem;
     }
     header img {
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1rem;
       border: 3px solid #555;
     }
     header h1 {
       font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      margin: 1rem 0 0.5rem;
     }
     header p {
       font-size: 1.25rem;
       color: #ccc;
+      margin: 0;
     }
     .cta-buttons a {
       display: inline-block;
@@ -82,11 +94,13 @@
 <body>
   <header>
     <img src="1.png" alt="Lloyd Miego Profile Picture" />
-    <h1>Hi, I'm Lloyd – Electronics Engineer & Virtual Assistant</h1>
-    <p>I help startups grow with tech expertise and digital support.</p>
-    <div class="cta-buttons">
-      <a href="#">Download Resume</a>
-      <a href="#contact">Work With Me</a>
+    <div class="header-content">
+      <h1>LLOYD MIEGO</h1>
+      <p>ELECTRONICS ENGINEERING | EXECUTIVE ASSISTANT</p>
+      <div class="cta-buttons">
+        <a href="#">Download Resume</a>
+        <a href="#contact">Work With Me</a>
+      </div>
     </div>
   </header>
 
