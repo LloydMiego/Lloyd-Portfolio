@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lloyd Miego | Electronics Engineer & VA</title>
   <style>
+    nav {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1rem;
+      background-color: transparent;
+    }
+    nav a {
+      margin: 0 0.5rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+    nav a:hover {
+      color: #00ff88;
+      border-bottom: 2px solid #00ff88;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -54,10 +72,13 @@
       background: #444;
       color: white;
       text-decoration: none;
-      transition: background 0.3s;
+      border: 2px solid transparent;
+      transition: background 0.3s, border-color 0.3s;
     }
     .cta-buttons a:hover {
-      background: #666;
+      background: #00ff88;
+      color: #1c1c1c;
+      border-color: #00ff88;
     }
     section {
       padding: 4rem 2rem;
@@ -96,9 +117,44 @@
         grid-template-columns: 1fr 1fr;
       }
     }
-  </style>
+      .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    revealElements.forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  });
+</script>
 </head>
-<body>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </nav>
   <header>
     <img src="1.png" alt="Lloyd Miego Profile Picture" />
     <div class="header-content">
@@ -111,13 +167,13 @@
     </div>
   </header>
 
-  <section>
+  <section id="about">
     <h2>About Me</h2>
     <p>I'm Lloyd Miego, an Electronics Engineer with over 5 years of hands-on experience as a Virtual Assistant. My professional journey combines technical expertise with versatile administrative support. I specialize in technical support, project management, social media content scheduling, email marketing, and customer service.</p>
     <p>With a solid engineering background and a keen interest in leveraging digital tools and automation, I excel at bridging the gap between highly technical tasks and efficient operational execution. Whether it's streamlining workflows or enhancing client engagement strategies, I bring both precision and adaptability to every project I handle.</p>
   </section>
 
-  <section>
+  <section id="services">
     <h2>What I Do</h2>
     <div class="services-grid">
       <div class="service">
@@ -139,7 +195,7 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" style="scroll-margin-top: 80px;">
     <h2>Contact Me</h2>
     <p>Ready to work together? Let’s connect.</p>
     <p>Email: <a href="mailto:lloydmiego@gmail.com" style="color: #aaa;">lloydmiego@gmail.com</a></p>
