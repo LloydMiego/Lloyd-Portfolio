@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="">
 <head>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <!-- SEO & Social Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="description" content="Lloyd Miego — Electronics Engineer & Executive Assistant. Portfolio showcasing skills in electronics, virtual assistance, video editing, and more." />
@@ -11,171 +14,52 @@
   <title>Lloyd Miego | Electronics Engineer & VA</title>
 
   <style>
-    :root {
-      --bg: #1c1c1c;
-      --fg: #f0f0f0;
-      --accent: #00ff88;
-      --card-bg: #2a2a2a;
-    }
-    [data-theme="light"] {
-      --bg: #fafafa;
-      --fg: #222;
-      --accent: #007f5f;
-      --card-bg: #ececec;
-    }
-    html { scroll-behavior: smooth; }
+    /* Apply new font globally */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--fg);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg, #1c1c1c);
+      color: var(--fg, #f0f0f0);
     }
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: rgba(28,28,28,0.9);
-      padding: 1rem 2rem;
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto;
-      display: flex;
-      justify-content: flex-end;
-      box-sizing: border-box;
-      z-index: 100;
-    }
-    nav a {
-      margin: 0 0.5rem;
-      font-size: 0.9rem;
-      color: var(--fg);
-      text-decoration: none;
-      transition: color 0.3s, border-bottom 0.3s;
-    }
-    nav a:hover {
-      color: var(--accent);
-      border-bottom: 2px solid var(--accent);
-    }
-    #theme-toggle {
-      background: none;
-      border: 1px solid var(--fg);
-      color: var(--fg);
-      padding: 0.25rem 0.5rem;
-      margin-left: 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    header {
-      width: 100%;
-      background: url('pattern.svg') center/cover no-repeat,
-                  linear-gradient(to right, #ffffff10, #2a2a2a);
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .header-content { max-width: 1200px; margin: 0 auto; }
-    header h1 { font-size: 5rem; margin: 0.5rem 0; }
-    header p { font-size: 1.25rem; color: var(--fg); }
-    .cta-buttons a {
-      display: inline-block;
-      margin: 1rem 0.5rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
-      background: #444;
-      color: var(--fg);
-      text-decoration: none;
-      border: 2px solid transparent;
-      transition: background 0.3s, border-color 0.3s, color 0.3s;
-    }
-    .cta-buttons a:hover {
-      background: var(--accent);
-      color: var(--bg);
-      border-color: var(--accent);
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 2rem auto;
-      background-color: var(--card-bg);
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    }
-    h2 {
-      border-bottom: 2px solid #444;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
+
+    /* Revamped “What I Do” grid */
     .services-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
-    @media (min-width: 600px) {
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+
     .service {
-      background: var(--card-bg);
-      padding: 1rem;
-      border-radius: 8px;
-      border-left: 4px solid #ccc;
+      background: var(--card-bg, #2a2a2a);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .tool-card {
-      background: var(--card-bg);
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-      border: 1px solid #333;
-      transition: transform 0.3s ease;
+    .service:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.6);
     }
-    .tool-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
+
+    /* Tighter, clearer headings & text */
+    .service h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--fg, #f0f0f0);
     }
-    .tool-card img {
-      width: 32px;
-      height: 32px;
-      margin-bottom: 0.5rem;
-    }
-    .tool-card p {
+    .service p {
       margin: 0;
-      font-size: 0.9rem;
-      color: var(--fg);
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #ddd;
     }
-    #contact a {
-      color: var(--fg);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    #contact a:hover {
-      color: var(--accent);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background: #121212;
-      color: #999;
-    }
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    #toTop {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      display: none;
-      background: var(--accent);
-      color: var(--bg);
-      border: none;
-      border-radius: 50%;
-      padding: 0.5rem 0.75rem;
-      cursor: pointer;
-      z-index: 100;
+
+    /* Optional: lighten the section background for contrast */
+    #services {
+      background-color: rgba(255,255,255,0.03);
+      border-radius: 12px;
     }
   </style>
 </head>
