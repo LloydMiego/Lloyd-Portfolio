@@ -41,7 +41,6 @@
       width: 100%;
       background: linear-gradient(to right, #ffffff10, #2a2a2a);
       padding: 4rem 2rem;
-      color: #f0f0f0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -56,7 +55,6 @@
 
     header h1 {
       font-size: 4rem;
-      color: #f0f0f0;
       margin: 1rem 0 0.5rem;
     }
 
@@ -89,7 +87,6 @@
       max-width: 1200px;
       margin: 0 auto;
       background-color: #1f1f1f;
-      color: #f0f0f0;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     }
@@ -113,19 +110,36 @@
       border-left: 4px solid #ccc;
     }
 
-    footer {
-      width: 100%;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      background: #121212;
-      color: #999;
-    }
-
     @media (min-width: 600px) {
       .services-grid {
         grid-template-columns: 1fr 1fr;
       }
+    }
+
+    .tool-card {
+      background: #2a2a2a;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #333;
+      transition: transform 0.3s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+      border-color: #00ff88;
+    }
+
+    .tool-card img {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 0.5rem;
+    }
+
+    .tool-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #ddd;
     }
 
     #contact a {
@@ -136,6 +150,15 @@
 
     #contact a:hover {
       color: #00ff88;
+    }
+
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background: #121212;
+      color: #999;
     }
 
     .reveal {
@@ -156,6 +179,7 @@
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#testimonials">Testimonials</a>
+    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
   </nav>
@@ -173,8 +197,8 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I'm Lloyd Miego, an Electronics Engineer with over 5 years of hands-on experience as a Virtual Assistant. My professional journey combines technical expertise with versatile administrative support. I specialize in technical support, project management, social media content scheduling, email marketing, and customer service.</p>
-    <p>With a solid engineering background and a keen interest in leveraging digital tools and automation, I excel at bridging the gap between highly technical tasks and efficient operational execution. Whether it's streamlining workflows or enhancing client engagement strategies, I bring both precision and adaptability to every project I handle.</p>
+    <p>I'm Lloyd Miego, an Electronics Engineer with over 5 years of hands-on experience as a Virtual Assistant. My professional journey combines technical expertise with versatile administrative support.</p>
+    <p>With a solid engineering background and a keen interest in leveraging digital tools and automation, I bring both precision and adaptability to every project I handle.</p>
   </section>
 
   <section id="services">
@@ -194,7 +218,7 @@
       </div>
       <div class="service">
         <h3>Video Editing & Content Management</h3>
-        <p>Produced and managed over 1,000 YouTube videos, optimizing content for engagement, consistency, and brand growth. Skilled in editing workflows, publishing strategies, and audience analytics.</p>
+        <p>Produced and managed 1,000+ YouTube videos with strong brand consistency and viewer engagement.</p>
       </div>
     </div>
   </section>
@@ -204,15 +228,15 @@
     <div class="services-grid">
       <div class="service">
         <h3>1000+ YouTube Videos Produced</h3>
-        <p>End-to-end video editing for motivational, tech, crypto, and lifestyle content using Adobe Premiere and CapCut.</p>
+        <p>End-to-end editing for motivational, tech, crypto, and educational creators.</p>
       </div>
       <div class="service">
-        <h3>CRM & Inbox Automation (VA Work)</h3>
-        <p>Set up email automation flows, sorted queries, built SOPs and optimized inbox management for executive clients.</p>
+        <h3>CRM & Inbox Automation</h3>
+        <p>Helped startups automate inbox responses, client onboarding, and scheduling using Notion, Zapier, and Gmail filters.</p>
       </div>
       <div class="service">
-        <h3>Custom Microcontroller Circuits</h3>
-        <p>Designed and simulated embedded systems using Arduino/ESP32, integrating sensors and mobile interface apps.</p>
+        <h3>Embedded Circuit Prototyping</h3>
+        <p>Developed microcontroller projects with ESP32 and Arduino for IoT and sensor applications.</p>
       </div>
     </div>
   </section>
@@ -221,16 +245,52 @@
     <h2>Testimonials</h2>
     <div class="services-grid">
       <div class="service">
-        <p><strong>“Lloyd is reliable, fast, and proactive. He helped us grow our YouTube channel without missing a beat.”</strong></p>
-        <p>- Client from California, USA</p>
+        <p><strong>"Lloyd is reliable, fast, and proactive. He helped us grow our YouTube channel without missing a beat."</strong></p>
+        <p>- Client from California</p>
       </div>
       <div class="service">
-        <p><strong>“He made my operations flow like butter — everything from email, scheduling to outreach was optimized.”</strong></p>
+        <p><strong>"He made our operations flow like butter — from email to marketing automation."</strong></p>
         <p>- Startup Founder, Singapore</p>
       </div>
       <div class="service">
-        <p><strong>“A sharp engineer who understands both tech and communication. Truly rare to find.”</strong></p>
-        <p>- Freelance client via Upwork</p>
+        <p><strong>"A rare combination of tech and communication excellence."</strong></p>
+        <p>- Upwork Client</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Tools</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 4rem;">
+      <!-- Development -->
+      <div style="flex: 1; min-width: 300px;">
+        <h3>Development</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+          <div class="tool-card"><img src="icons/arduino.png" alt=""><p>Arduino</p></div>
+          <div class="tool-card"><img src="icons/raspberrypi.png" alt=""><p>Raspberry Pi</p></div>
+          <div class="tool-card"><img src="icons/esp32.png" alt=""><p>Espressif</p></div>
+          <div class="tool-card"><img src="icons/nextjs.png" alt=""><p>Next.js</p></div>
+          <div class="tool-card"><img src="icons/react.png" alt=""><p>React</p></div>
+          <div class="tool-card"><img src="icons/tailwind.png" alt=""><p>TailwindCSS</p></div>
+          <div class="tool-card"><img src="icons/typescript.png" alt=""><p>TypeScript</p></div>
+          <div class="tool-card"><img src="icons/javascript.png" alt=""><p>JavaScript</p></div>
+          <div class="tool-card"><img src="icons/python.png" alt=""><p>Python</p></div>
+          <div class="tool-card"><img src="icons/firebase.png" alt=""><p>Firebase</p></div>
+          <div class="tool-card"><img src="icons/kicad.png" alt=""><p>KiCad</p></div>
+          <div class="tool-card"><img src="icons/proteus.png" alt=""><p>Proteus</p></div>
+        </div>
+      </div>
+
+      <!-- Design -->
+      <div style="flex: 1; min-width: 300px;">
+        <h3>Design</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+          <div class="tool-card"><img src="icons/photoshop.png" alt=""><p>Photoshop</p></div>
+          <div class="tool-card"><img src="icons/indesign.png" alt=""><p>InDesign</p></div>
+          <div class="tool-card"><img src="icons/illustrator.png" alt=""><p>Illustrator</p></div>
+          <div class="tool-card"><img src="icons/sketchup.png" alt=""><p>SketchUp</p></div>
+          <div class="tool-card"><img src="icons/figma.png" alt=""><p>Figma</p></div>
+        </div>
       </div>
     </div>
   </section>
