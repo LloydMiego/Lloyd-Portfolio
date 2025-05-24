@@ -1,276 +1,330 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Lloyd Miego — Electronics Engineer & Executive Assistant. Portfolio showcasing skills in electronics, virtual assistance, video editing, and more." />
-  <meta property="og:title" content="Lloyd Miego Portfolio" />
-  <meta property="og:description" content="Explore the work and expertise of Lloyd Miego: Electronics Engineer, Virtual Assistant, Video Editor & Content Manager." />
-  <meta property="og:image" content="https://lloydmiego.github.io/Lloyd-Portfolio/og-image.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lloyd Miego | Electronics Engineer & VA</title>
-
   <style>
-    :root {
-      --bg: #1c1c1c;
-      --fg: #f0f0f0;
-      --accent: #00ff88;
-      --card-bg: #2a2a2a;
-    }
-    [data-theme="light"] {
-      --bg: #fafafa;
-      --fg: #222;
-      --accent: #007f5f;
-      --card-bg: #ececec;
-    }
-    html { scroll-behavior: smooth; }
     body {
-      margin: 0; font-family: Arial, sans-serif;
-      background-color: var(--bg); color: var(--fg);
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: #f0f0f0;
     }
+
     nav {
-      position: sticky; top: 0;
-      background-color: rgba(28,28,28,0.9);
-      padding: 1rem 2rem; max-width: 1200px; width: 100%;
-      margin: 0 auto; display: flex; justify-content: flex-end;
-      box-sizing: border-box; z-index: 100;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      box-sizing: border-box;
     }
+
     nav a {
-      margin: 0 0.5rem; font-size: 0.9rem;
-      color: var(--fg); text-decoration: none;
+      margin: 0 0.5rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      text-decoration: none;
       transition: color 0.3s, border-bottom 0.3s;
     }
+
     nav a:hover {
-      color: var(--accent); border-bottom: 2px solid var(--accent);
+      color: #00ff88;
+      border-bottom: 2px solid #00ff88;
     }
-    #theme-toggle {
-      background: none; border: 1px solid var(--fg);
-      color: var(--fg); padding: 0.25rem 0.5rem;
-      margin-left: 1rem; border-radius: 4px; cursor: pointer;
-    }
+
     header {
-      width:100%; background:
-      url('pattern.svg') center/cover no-repeat,
-      linear-gradient(to right,#ffffff10,#2a2a2a);
-      padding: 4rem 2rem; text-align: center;
+      width: 100%;
+      background: linear-gradient(to right, #ffffff10, #2a2a2a);
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
-    .header-content { max-width:1200px; margin:0 auto; }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
     header h1 {
-      font-size: 5rem; /* name made bigger */
-      margin: 0.5rem 0;
+      font-size: 5rem; /* Made the name bigger */
+      margin: 1rem 0 0.5rem;
     }
+
     header p {
-      font-size:1.25rem; color: var(--fg); margin:0;
+      font-size: 1.25rem;
+      color: #ccc;
+      margin: 0;
     }
+
     .cta-buttons a {
-      display:inline-block; margin:1rem 0.5rem;
-      padding:0.75rem 1.5rem; border-radius:5px;
-      background:#444; color: var(--fg);
-      text-decoration:none; border:2px solid transparent;
-      transition:background 0.3s,border-color 0.3s,color 0.3s;
+      display: inline-block;
+      margin: 1rem 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      background: #444;
+      color: white;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
     }
+
     .cta-buttons a:hover {
-      background: var(--accent); color: var(--bg);
-      border-color: var(--accent);
+      background: #00ff88;
+      color: #1c1c1c;
+      border-color: #00ff88;
     }
+
     section {
-      padding:4rem 2rem; max-width:1200px; margin:2rem auto;
-      background-color: var(--card-bg);
-      border-radius:8px; box-shadow:0 0 10px rgba(255,255,255,0.05);
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #1f1f1f;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     }
+
     h2 {
-      border-bottom:2px solid #444; padding-bottom:0.5rem;
-      margin-bottom:1rem;
+      border-bottom: 2px solid #444;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
+
     .services-grid {
-      display:grid; grid-template-columns:1fr;
-      gap:1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
-    @media(min-width:600px){
-      .services-grid { grid-template-columns:1fr 1fr; }
-    }
+
     .service {
-      background: var(--card-bg); padding:1rem;
-      border-radius:8px; border-left:4px solid #ccc;
+      background: #2a2a2a;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid #ccc;
     }
+
+    @media (min-width: 600px) {
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
     .tool-card {
-      background: var(--card-bg); padding:1rem;
-      border-radius:8px; text-align:center;
-      border:1px solid #333;
+      background: #2a2a2a;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #333;
       transition: transform 0.3s ease;
     }
+
     .tool-card:hover {
       transform: translateY(-5px);
-      border-color: var(--accent);
+      border-color: #00ff88;
     }
+
     .tool-card img {
-      width:32px; height:32px; margin-bottom:0.5rem;
+      width: 32px;
+      height: 32px;
+      margin-bottom: 0.5rem;
     }
+
     .tool-card p {
-      margin:0; font-size:0.9rem; color:var(--fg);
+      margin: 0;
+      font-size: 0.9rem;
+      color: #ddd;
     }
+
     #contact a {
-      color: var(--fg); text-decoration:none;
-      transition:color 0.3s ease;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
+
     #contact a:hover {
-      color: var(--accent);
+      color: #00ff88;
     }
+
     footer {
-      text-align:center; padding:2rem;
-      font-size:0.9rem; background:#121212; color:#999;
+      width: 100%;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background: #121212;
+      color: #999;
     }
-    html.dark [data-theme="light"] header {
-      background: none;
-    }
+
     .reveal {
-      opacity:0; transform:translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
       transition: all 0.6s ease;
     }
+
     .reveal.visible {
-      opacity:1; transform:translateY(0);
-    }
-    #toTop {
-      position:fixed; bottom:2rem; right:2rem;
-      display:none; background:var(--accent);
-      color:var(--bg); border:none;
-      border-radius:50%; padding:0.5rem 0.75rem;
-      cursor:pointer; z-index:100;
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
+
 <body>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </nav>
 
-<nav>
-  <a href="#services">Services</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <button id="theme-toggle" aria-label="Toggle light/dark theme">🌓</button>
-</nav>
-
-<header>
-  <div class="header-content">
-    <h1>LLOYD MIEGO</h1>
-    <p>ELECTRONICS ENGINEERING | EXECUTIVE ASSISTANT</p>
-    <div class="cta-buttons">
-      <a href="lloyd-miego-resume.pdf" download>Download Resume</a>
-      <a href="#contact">Work With Me</a>
-    </div>
-  </div>
-</header>
-
-<section id="about">
-  <h2>About Me</h2>
-  <p>I'm Lloyd Miego, an Electronics Engineer with over 5 years of hands-on experience as a Virtual Assistant...</p>
-</section>
-
-<section id="services">
-  <h2>What I Do</h2>
-  <div class="services-grid">
-    <div class="service"><h3>Virtual Assistant Services</h3><p>Inbox management, scheduling, CRM updates, research, and data entry.</p></div>
-    <div class="service"><h3>Digital Marketing Support</h3><p>Social media content calendars, performance metrics, and simple graphics.</p></div>
-    <div class="service"><h3>Technical Consulting</h3><p>Circuit design, electronics troubleshooting, and product testing.</p></div>
-    <div class="service"><h3>Video Editing & Content Management</h3><p>Produced and managed 1,000+ YouTube videos with strong brand consistency and viewer engagement.</p></div>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Skills & Tools</h2>
-  <div style="display:flex;flex-wrap:wrap;gap:4rem;">
-    <!-- Development -->
-    <div style="flex:1;min-width:300px;">
-      <h3>Development</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;">
-        <div class="tool-card"><img loading="lazy" src="icons/arduino.png" alt="Arduino"><p>Arduino</p></div>
-        <!-- ... other dev tools ... -->
+  <header>
+    <div class="header-content">
+      <h1>LLOYD MIEGO</h1>
+      <p>ELECTRONICS ENGINEERING | EXECUTIVE ASSISTANT</p>
+      <div class="cta-buttons">
+        <a href="lloyd-miego-resume.pdf" download>Download Resume</a>
+        <a href="#contact">Work With Me</a>
       </div>
     </div>
-    <!-- Design -->
-    <div style="flex:1;min-width:300px;">
-      <h3>Design</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;">
-        <div class="tool-card"><img loading="lazy" src="icons/photoshop.png" alt="Photoshop"><p>Photoshop</p></div>
-        <!-- ... other design tools ... -->
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm Lloyd Miego, an Electronics Engineer with over 5 years of hands-on experience as a Virtual Assistant. My professional journey combines technical expertise with versatile administrative support.</p>
+    <p>With a solid engineering background and a keen interest in leveraging digital tools and automation, I bring both precision and adaptability to every project I handle.</p>
+  </section>
+
+  <section id="services">
+    <h2>What I Do</h2>
+    <div class="services-grid">
+      <div class="service">
+        <h3>Virtual Assistant Services</h3>
+        <p>Inbox management, scheduling, CRM updates, research, and data entry.</p>
+      </div>
+      <div class="service">
+        <h3>Digital Marketing Support</h3>
+        <p>Social media content calendars, performance metrics, and simple graphics.</p>
+      </div>
+      <div class="service">
+        <h3>Technical Consulting</h3>
+        <p>Circuit design, electronics troubleshooting, and product testing.</p>
+      </div>
+      <div class="service">
+        <h3>Video Editing & Content Management</h3>
+        <p>Produced and managed 1,000+ YouTube videos with strong brand consistency and viewer engagement.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="services-grid">
-    <div class="service">
-      <h3>Personal Portfolio Website</h3>
-      <p>Built a responsive portfolio with HTML, CSS & JavaScript; deployed on GitHub Pages.</p>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="services-grid">
+      <div class="service">
+        <h3>Personal Portfolio Website</h3>
+        <p>Built a responsive portfolio with HTML, CSS & JavaScript; deployed on GitHub Pages.</p>
+      </div>
+      <div class="service">
+        <h3>IoT Sensor Network</h3>
+        <p>Designed and deployed an ESP32-based environmental monitoring system with real-time dashboard.</p>
+      </div>
+      <div class="service">
+        <h3>Email Automation Workflow</h3>
+        <p>Automated email follow-ups and newsletter campaigns using Zapier and Mailchimp integrations.</p>
+      </div>
     </div>
-    <div class="service">
-      <h3>IoT Sensor Network</h3>
-      <p>Designed and deployed an ESP32-based environmental monitoring system with real-time dashboard.</p>
-    </div>
-    <div class="service">
-      <h3>Email Automation Workflow</h3>
-      <p>Automated email follow-ups and newsletter campaigns using Zapier and Mailchimp integrations.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="testimonials">
-  <h2>Testimonials</h2>
-  <div class="services-grid">
-    <div class="service">
-      <p><strong>"Lloyd delivered an exceptional portfolio site that truly stands out!"</strong></p>
-      <p>- Jane Doe, CEO at TechCorp</p>
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="services-grid">
+      <div class="service">
+        <p><strong>"Lloyd delivered an exceptional portfolio site that truly stands out!"</strong></p>
+        <p>- Jane Doe, CEO at TechCorp</p>
+      </div>
+      <div class="service">
+        <p><strong>"His IoT project exceeded expectations and saved us hours of manual data collection."</strong></p>
+        <p>- John Smith, Startup Founder</p>
+      </div>
+      <div class="service">
+        <p><strong>"The automation workflow he set up increased our engagement by 40%."</strong></p>
+        <p>- Mary Johnson, Marketing Manager</p>
+      </div>
     </div>
-    <div class="service">
-      <p><strong>"His IoT project exceeded expectations and saved us hours of manual data collection."</strong></p>
-      <p>- John Smith, Startup Founder</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Tools</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 4rem;">
+      <!-- Development -->
+      <div style="flex: 1; min-width: 300px;">
+        <h3>Development</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+          <div class="tool-card"><img src="icons/arduino.png" alt=""><p>Arduino</p></div>
+          <div class="tool-card"><img src="icons/raspberrypi.png" alt=""><p>Raspberry Pi</p></div>
+          <div class="tool-card"><img src="icons/esp32.png" alt=""><p>Espressif</p></div>
+          <div class="tool-card"><img src="icons/nextjs.png" alt=""><p>Next.js</p></div>
+          <div class="tool-card"><img src="icons/react.png" alt=""><p>React</p></div>
+          <div class="tool-card"><img src="icons/tailwind.png" alt=""><p>TailwindCSS</p></div>
+          <div class="tool-card"><img src="icons/typescript.png" alt=""><p>TypeScript</p></div>
+          <div class="tool-card"><img src="icons/javascript.png" alt=""><p>JavaScript</p></div>
+          <div class="tool-card"><img src="icons/python.png" alt=""><p>Python</p></div>
+          <div class="tool-card"><img src="icons/firebase.png" alt=""><p>Firebase</p></div>
+          <div class="tool-card"><img src="icons/kicad.png" alt=""><p>KiCad</p></div>
+          <div class="tool-card"><img src="icons/proteus.png" alt=""><p>Proteus</p></div>
+        </div>
+      </div>
+      <!-- Design -->
+      <div style="flex: 1; min-width: 300px;">
+        <h3>Design</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+          <div class="tool-card"><img src="icons/photoshop.png" alt=""><p>Photoshop</p></div>
+          <div class="tool-card"><img src="icons/indesign.png" alt=""><p>InDesign</p></div>
+          <div class="tool-card"><img src="icons/illustrator.png" alt=""><p>Illustrator</p></div>
+          <div class="tool-card"><img src="icons/sketchup.png" alt=""><p>SketchUp</p></div>
+          <div class="tool-card"><img src="icons/figma.png" alt=""><p>Figma</p></div>
+          <div class="tool-card"><img src="icons/canva.png" alt=""><p>Canva</p></div>
+        </div>
+      </div>
     </div>
-    <div class="service">
-      <p><strong>"The automation workflow he set up increased our engagement by 40%."</strong></p>
-      <p>- Mary Johnson, Marketing Manager</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" style="scroll-margin-top:80px;">
-  <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/yourformid" method="POST" style="max-width:600px;">
-    <label>Name<br><input type="text" name="name" required></label><br><br>
-    <label>Email<br><input type="email" name="email" required></label><br><br>
-    <label>Message<br><textarea name="message" rows="4" required></textarea></label><br><br>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+  <section id="contact" style="scroll-margin-top: 80px;">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST" style="max-width:600px;">
+      <label>Name<br><input type="text" name="name" required></label><br><br>
+      <label>Email<br><input type="email" name="email" required></label><br><br>
+      <label>Message<br><textarea name="message" rows="4" required></textarea></label><br><br>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-<button id="toTop" aria-label="Back to top">↑</button>
+  <footer>
+    &copy; 2025 Lloyd Miego. All rights reserved.
+  </footer>
 
-<footer>
-  &copy; 2025 Lloyd Miego. All rights reserved.
-</footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealElements = document.querySelectorAll('section');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Scroll reveal
-    document.querySelectorAll('section').forEach(el => {
-      el.classList.add('reveal');
-      new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-      }, { threshold: 0.1 }).observe(el);
+      revealElements.forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+      });
     });
-    // Theme toggle
-    document.getElementById('theme-toggle').onclick = () => {
-      document.documentElement.dataset.theme =
-        document.documentElement.dataset.theme === 'light' ? '' : 'light';
-    };
-    // Back to top
-    const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll', () => {
-      toTop.style.display = window.pageYOffset > 300 ? 'block' : 'none';
-    });
-    toTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+  </script>
 </body>
 </html>
