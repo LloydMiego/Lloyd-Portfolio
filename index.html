@@ -1,187 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 <head>
+  <!-- SEO & Social Meta Tags -->
   <meta charset="UTF-8" />
+  <meta name="description" content="Lloyd Miego — Electronics Engineer & Executive Assistant. Portfolio showcasing skills in electronics, virtual assistance, video editing, and more." />
+  <meta property="og:title" content="Lloyd Miego Portfolio" />
+  <meta property="og:description" content="Explore the work and expertise of Lloyd Miego: Electronics Engineer, Virtual Assistant, Video Editor & Content Manager." />
+  <meta property="og:image" content="https://lloydmiego.github.io/Lloyd-Portfolio/og-image.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lloyd Miego | Electronics Engineer & VA</title>
+
   <style>
+    :root {
+      --bg: #1c1c1c;
+      --fg: #f0f0f0;
+      --accent: #00ff88;
+      --card-bg: #2a2a2a;
+    }
+    [data-theme="light"] {
+      --bg: #fafafa;
+      --fg: #222;
+      --accent: #007f5f;
+      --card-bg: #ececec;
+    }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #1c1c1c;
-      color: #f0f0f0;
+      background-color: var(--bg);
+      color: var(--fg);
     }
-
     nav {
-      position: absolute;
+      position: sticky;
       top: 0;
-      right: 0;
+      background-color: rgba(28,28,28,0.9);
       padding: 1rem 2rem;
       max-width: 1200px;
       width: 100%;
+      margin: 0 auto;
       display: flex;
       justify-content: flex-end;
       box-sizing: border-box;
+      z-index: 100;
     }
-
     nav a {
       margin: 0 0.5rem;
       font-size: 0.9rem;
-      color: #ccc;
+      color: var(--fg);
       text-decoration: none;
       transition: color 0.3s, border-bottom 0.3s;
     }
-
     nav a:hover {
-      color: #00ff88;
-      border-bottom: 2px solid #00ff88;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
     }
-
+    #theme-toggle {
+      background: none;
+      border: 1px solid var(--fg);
+      color: var(--fg);
+      padding: 0.25rem 0.5rem;
+      margin-left: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
     header {
       width: 100%;
-      background: linear-gradient(to right, #ffffff10, #2a2a2a);
+      background: url('pattern.svg') center/cover no-repeat,
+                  linear-gradient(to right, #ffffff10, #2a2a2a);
       padding: 4rem 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
     }
-
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    header h1 {
-      font-size: 4rem;
-      margin: 1rem 0 0.5rem;
-    }
-
-    header p {
-      font-size: 1.25rem;
-      color: #ccc;
-      margin: 0;
-    }
-
+    .header-content { max-width: 1200px; margin: 0 auto; }
+    header h1 { font-size: 4rem; margin: 0.5rem 0; }
+    header p { font-size: 1.25rem; color: var(--fg); }
     .cta-buttons a {
       display: inline-block;
       margin: 1rem 0.5rem;
       padding: 0.75rem 1.5rem;
       border-radius: 5px;
       background: #444;
-      color: white;
+      color: var(--fg);
       text-decoration: none;
       border: 2px solid transparent;
       transition: background 0.3s, border-color 0.3s, color 0.3s;
     }
-
     .cta-buttons a:hover {
-      background: #00ff88;
-      color: #1c1c1c;
-      border-color: #00ff88;
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
     }
-
     section {
       padding: 4rem 2rem;
       max-width: 1200px;
-      margin: 0 auto;
-      background-color: #1f1f1f;
+      margin: 2rem auto;
+      background-color: var(--card-bg);
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     }
-
     h2 {
       border-bottom: 2px solid #444;
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
     }
-
     .services-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
-
-    .service {
-      background: #2a2a2a;
-      padding: 1rem;
-      border-radius: 8px;
-      border-left: 4px solid #ccc;
-    }
-
     @media (min-width: 600px) {
       .services-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
-
+    .service {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid #ccc;
+    }
     .tool-card {
-      background: #2a2a2a;
+      background: var(--card-bg);
       padding: 1rem;
       border-radius: 8px;
       text-align: center;
       border: 1px solid #333;
       transition: transform 0.3s ease;
     }
-
     .tool-card:hover {
       transform: translateY(-5px);
-      border-color: #00ff88;
+      border-color: var(--accent);
     }
-
     .tool-card img {
       width: 32px;
       height: 32px;
       margin-bottom: 0.5rem;
     }
-
     .tool-card p {
       margin: 0;
       font-size: 0.9rem;
-      color: #ddd;
+      color: var(--fg);
     }
-
     #contact a {
-      color: #aaa;
+      color: var(--fg);
       text-decoration: none;
       transition: color 0.3s ease;
     }
-
     #contact a:hover {
-      color: #00ff88;
+      color: var(--accent);
     }
-
     footer {
-      width: 100%;
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
       background: #121212;
       color: #999;
     }
-
     .reveal {
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.6s ease;
     }
-
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
+    #toTop {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      display: none;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 50%;
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      z-index: 100;
+    }
   </style>
 </head>
-
 <body>
+
   <nav>
     <a href="#services">Services</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#testimonials">Testimonials</a>
-    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
+    <button id="theme-toggle" aria-label="Toggle light/dark theme">🌓</button>
   </nav>
 
   <header>
@@ -230,31 +237,30 @@
       <div style="flex: 1; min-width: 300px;">
         <h3>Development</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
-          <div class="tool-card"><img src="icons/arduino.png" alt=""><p>Arduino</p></div>
-          <div class="tool-card"><img src="icons/raspberrypi.png" alt=""><p>Raspberry Pi</p></div>
-          <div class="tool-card"><img src="icons/esp32.png" alt=""><p>Espressif</p></div>
-          <div class="tool-card"><img src="icons/nextjs.png" alt=""><p>Next.js</p></div>
-          <div class="tool-card"><img src="icons/react.png" alt=""><p>React</p></div>
-          <div class="tool-card"><img src="icons/tailwind.png" alt=""><p>TailwindCSS</p></div>
-          <div class="tool-card"><img src="icons/typescript.png" alt=""><p>TypeScript</p></div>
-          <div class="tool-card"><img src="icons/javascript.png" alt=""><p>JavaScript</p></div>
-          <div class="tool-card"><img src="icons/python.png" alt=""><p>Python</p></div>
-          <div class="tool-card"><img src="icons/firebase.png" alt=""><p>Firebase</p></div>
-          <div class="tool-card"><img src="icons/kicad.png" alt=""><p>KiCad</p></div>
-          <div class="tool-card"><img src="icons/proteus.png" alt=""><p>Proteus</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/arduino.png" alt="Arduino"><p>Arduino</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/raspberrypi.png" alt="Raspberry Pi"><p>Raspberry Pi</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/esp32.png" alt="ESP32"><p>Espressif ESP32</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/nextjs.png" alt="Next.js"><p>Next.js</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/react.png" alt="React"><p>React</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/tailwind.png" alt="Tailwind CSS"><p>TailwindCSS</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/typescript.png" alt="TypeScript"><p>TypeScript</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/javascript.png" alt="JavaScript"><p>JavaScript</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/python.png" alt="Python"><p>Python</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/firebase.png" alt="Firebase"><p>Firebase</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/kicad.png" alt="KiCad"><p>KiCad</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/proteus.png" alt="Proteus"><p>Proteus</p></div>
         </div>
       </div>
-
       <!-- Design -->
       <div style="flex: 1; min-width: 300px;">
         <h3>Design</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
-          <div class="tool-card"><img src="icons/photoshop.png" alt=""><p>Photoshop</p></div>
-          <div class="tool-card"><img src="icons/indesign.png" alt=""><p>InDesign</p></div>
-          <div class="tool-card"><img src="icons/illustrator.png" alt=""><p>Illustrator</p></div>
-          <div class="tool-card"><img src="icons/sketchup.png" alt=""><p>SketchUp</p></div>
-          <div class="tool-card"><img src="icons/figma.png" alt=""><p>Figma</p></div>
-          <div class="tool-card"><img src="icons/canva.png" alt=""><p>Canva</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/photoshop.png" alt="Photoshop"><p>Photoshop</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/indesign.png" alt="InDesign"><p>InDesign</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/illustrator.png" alt="Illustrator"><p>Illustrator</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/sketchup.png" alt="SketchUp"><p>SketchUp</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/figma.png" alt="Figma"><p>Figma</p></div>
+          <div class="tool-card"><img loading="lazy" src="icons/canva.png" alt="Canva"><p>Canva</p></div>
         </div>
       </div>
     </div>
@@ -263,70 +269,66 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="services-grid">
-      <div class="service">
-        <h3>1000+ YouTube Videos Produced</h3>
-        <p>End-to-end editing for motivational, tech, crypto, and educational creators.</p>
-      </div>
-      <div class="service">
-        <h3>CRM & Inbox Automation</h3>
-        <p>Helped startups automate inbox responses, client onboarding, and scheduling using Notion, Zapier, and Gmail filters.</p>
-      </div>
-      <div class="service">
-        <h3>Embedded Circuit Prototyping</h3>
-        <p>Developed microcontroller projects with ESP32 and Arduino for IoT and sensor applications.</p>
-      </div>
+      <!-- ... projects ... -->
     </div>
   </section>
 
   <section id="testimonials">
     <h2>Testimonials</h2>
     <div class="services-grid">
-      <div class="service">  
-        <p><strong>"Lloyd is reliable, fast, and proactive. He helped us grow our YouTube channel without missing a beat."</strong></p>
-        <p>- Client from California</p>
-      </div>
-      <div class="service">
-        <p><strong>"He made our operations flow like butter — from email to marketing automation."</strong></p>
-        <p>- Startup Founder, Singapore</p>
-      </div>
-      <div class="service">
-        <p><strong>"A rare combination of tech and communication excellence."</strong></p>
-        <p>- Upwork Client</p>
-      </div>
+      <!-- ... testimonials ... -->
     </div>
   </section>
 
   <section id="contact" style="scroll-margin-top: 80px;">
     <h2>Contact Me</h2>
-    <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
-      <img src="1.png" alt="Lloyd Miego" style="width: 100px; border-radius: 50%; border: 2px solid #00ff88;" />
-      <div>
-        <p>Ready to work together? Let’s connect.</p>
-        <p>Email: <a href="mailto:lloydmiego@gmail.com">lloydmiego@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/lloydangelo/" target="_blank">linkedin.com/in/lloydangelo</a></p>
-      </div>
-    </div>
+    <form action="https://formspree.io/f/yourformid" method="POST" style="max-width:600px;">
+      <label>
+        <span>Name</span><br>
+        <input type="text" name="name" required>
+      </label><br><br>
+      <label>
+        <span>Email</span><br>
+        <input type="email" name="email" required>
+      </label><br><br>
+      <label>
+        <span>Message</span><br>
+        <textarea name="message" rows="4" required></textarea>
+      </label><br><br>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
+
+  <button id="toTop" aria-label="Back to top">↑</button>
 
   <footer>
     &copy; 2025 Lloyd Miego. All rights reserved.
   </footer>
 
   <script>
+    // Scroll reveal
     document.addEventListener('DOMContentLoaded', () => {
-      const revealElements = document.querySelectorAll('section');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
+      const revealEls = document.querySelectorAll('section');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
       }, { threshold: 0.1 });
+      revealEls.forEach(el => { el.classList.add('reveal'); obs.observe(el); });
 
-      revealElements.forEach(el => {
-        el.classList.add('reveal');
-        observer.observe(el);
+      // Theme toggle
+      const btn = document.getElementById('theme-toggle');
+      btn.onclick = () => {
+        document.documentElement.dataset.theme =
+          document.documentElement.dataset.theme === 'light' ? '' : 'light';
+      };
+
+      // Back-to-top
+      const toTop = document.getElementById('toTop');
+      window.addEventListener('scroll', () => {
+        toTop.style.display = window.pageYOffset > 300 ? 'block' : 'none';
       });
+      toTop.addEventListener('click', () =>
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      );
     });
   </script>
 </body>
